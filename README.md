@@ -17,6 +17,17 @@ Or install it yourself as:
 
     $ gem install minitest-homework
 
+## Homework
+
+The Homework test suite will always run the tests in the order that they are
+defined, because presumably there's a pedagogical progression.
+
+## Be Gentle
+
+The `be_gentle!` method changes the behavior of the summary reporter so that
+it tells you how many assertions you have passing, and only shows you the
+first error.
+
 ## Usage
 
 ```ruby
@@ -25,6 +36,8 @@ require minitest/pride
 require minitest/homework
 
 class SomethingTest < Minitest::Homework
+  self.be_gentle!
+
   def test_something
     assert_equal __, "testing"
   end
