@@ -1,7 +1,12 @@
 require "minitest/homework/version"
+require_relative 'summary_reporter'
 
 module Minitest
   class Homework < Test
+    def self.be_gentle!
+      Minitest::SummaryReporter.be_gentle!
+    end
+
     def self.runnable_methods
       methods_matching(/^test_/)
     end
